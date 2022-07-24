@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Registration form</title>
+</head>
+<body>
+    <main>
+        <header class="wrapper">
+           
+        </header>
+    
+    <section id="top-slot" class="wrapper">
+      <div id="background">
+      <form id="form" action="./index.html" method="GET">
+        <h1 class="title">Registration form</h1>
+        <fieldset>
+            <legend>Personal Details</legend>
+          <div class="form-line">
+            <label for="nickname"><span>*</span>NickName:</label>
+            <input id="nickname" name="nickname" type="text" placeholder="Iput nickname"required>
+          </div>
+          <div class="form-line">
+            <label for="firstname"><span>*</span>Firs name:</label>
+            <input id="firstname" name="firstname" type="text" placeholder="Iput firstname" required>
+          </div>
+          <div class="form-line">
+            <label for="lastname"><span>*</span>Last name:</label>
+            <input id="lastname" name="lastname" type="text" placeholder="Iput lastname" required>
+          </div>
+          <div class="form-line">
+            <label for="email"><span>*</span>Email:</label>
+            <input id="email" name="email" type="email" placeholder="@gmail.com" required>
+          </div>
+          <div class="form-actions">
+            <button type="reset">Reset</button>
+            <button type="submit">Submit</button>
+          </div>
+          </fieldset>
+        </form>
+      </div>
+      </section>
+      <section id="bottom-slot" class="wrapper">
+          <pre></pre>
+
+      </section>
+        </main>
+        <script src="./form.js"></script>
+</body>
+</html>
