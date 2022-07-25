@@ -2,8 +2,7 @@ let params = new URLSearchParams(location.search);
 
 const scoreTitle = document.getElementById("score");
 const healthTitle = document.getElementById("health");
-let health = 5;
-let score = 5;
+const enemy = document.getElementById("enemy");
 
 let name = null;
 let email = null;
@@ -14,21 +13,63 @@ function fillPlayer(player) {
   const tr = document.createElement("tr");
   const nickNameTd = document.createElement('td');
   const emailTd = document.createElement('td');
+  const timeTd = document.createElement('td');
   nickNameTd.innerText = player.nickname;
   emailTd.innerText = player.email;
+  timeTd.innerText = `${player.time}s`;
   tr.appendChild(nickNameTd);
   tr.appendChild(emailTd);
+  tr.appendChild(timeTd);
   playersList.appendChild(tr);
+}
+
+/*const tr = document.createElement("tr");
+
+const fillPlayer({nickname, email, time}) => `
+<td class="table-td">${nickname}</td>
+<td class="table-td">${email}</td>
+<td class="table-td">${time}</td>
+`*/
+
+function sortPlayersByTime(players) {
+  return players.sort((a,b) => a.time - b.time)
 }
 
 const players = JSON.parse(window.localStorage.getItem("players"));
 const playersList = document.getElementById("players");
 
 if (players?.length) {
-  players.forEach(fillPlayer);
+  sortPlayersByTime(players).forEach(fillPlayer);
 }
+const monsters = [{
+  id: 0,
+  name: 'Pink',
+  health: 5,
+  score: 5,
+  image: "./img/Pink_monster.jpg",  
+},  
+{ id: 1,
+name: 'Yellow',
+health: 7,
+score: 7,
+image: "./img/Blue_monster.jpg",
+},
+{  id: 2,
+  name: 'Green',
+  health: 10,
+  score: 10,
+  image: "./img/Green_monster_angry.jpg",
+}, {
+  id: 3,
+  name: 'Blue_boss',
+  health: 20,
+  score: 10,
+  image: "./img/Blue_monster02-.jpg",
+  }];
 
-const pink = {
+
+
+/*const pink = {
   name: "pink",
   health: 5,
   score: 5,
@@ -48,28 +89,36 @@ const boss = {
   score: 15,
   image:
     "https://previews.123rf.com/images/albertzig/albertzig1210/albertzig121000545/15626450-3d-cartoon-furry-cute-monster.jpg",
-};
+};*/
 
-let currentEnemy = pink;
+let currentEnemy = monsters[0];
+let health = currentEnemy.health;
+let score = currentEnemy.score;
 
 function onClick() {
   if (health === 1) {
     score = score + currentEnemy.score;
     scoreTitle.textContent = `Score: ${score}`;
-    if (currentEnemy.name === "pink") {
-      currentEnemy = blue;
-    } else if (currentEnemy.name === "blue") {
-      currentEnemy = boss;
+    const currentIndex = monsters.indexOf(currentEnemy);
+    if (currentIndex !== monsters.length - 1) {
+      currentEnemy = monsters[currentIndex + 1];
+      health = currentEnemy.health;
+      score = currentEnemy.score;
     } else {
       scoreTitle.style.display = "none";
       enemy.style.display = "none";
       healthTitle.textContent = "You won!";
-      const player = { nickname: params.get("nickname"), email: params.get("email") };
-      window.localStorage.setItem("players", JSON.stringify([...players, player]));
-      fillPlayer(player);
+
       const endDate = new Date();
       const diff = Math.abs(endDate-startDate) / 1000;
-     
+      const player = { nickname: params.get("nickname"), email: params.get("email"), time: diff };
+      const newPlayers = sortPlayersByTime(players?.length ? [...players, player] : [player]);
+      
+      window.localStorage.setItem("players", JSON.stringify(newPlayers));
+      playersList.innerHTML = '';
+
+      newPlayers.forEach(fillPlayer);
+      
       return;
     }
     health = currentEnemy.health;
@@ -82,13 +131,8 @@ function onClick() {
 }
 healthTitle.textContent = `Health: ${health}`;
 scoreTitle.textContent = `Score: ${score}`;
-const enemy = document.getElementById("enemy");
+
 enemy.onclick = onClick;
+enemy.setAttribute("src", currentEnemy.image);
 
-const resultList = document.querySelector("bottom-slot > pre");
-const searchString = window.location.search;
 
-new URLSearchParams(searchString).forEach((value, name) => {
-  resultList.append(`${name} : ${value}`);
-  resultList.append(document.createElement("br"));
-});
