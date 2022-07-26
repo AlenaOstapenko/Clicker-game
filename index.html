@@ -1,19 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./style.css">
-  <title>Clicker Game</title>
-</head>
-<body>
-  <div id="container">
-      <h1 id="score"></h1>
-      <h2 id="health"></h2>
-      <img id="enemy" src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc_uiJLDr_xW2id3mGe_tslXQRPAJvd4OW8x4VoMIqdJTTxIcwDIU74OpFA5W13BFyghk&usqp=CAU" alt = "Monster">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style-index.css" />
+    <title>Clicker Game</title>
+  </head>
+  <body>
+    <main>
+      <header></header>
 
-  </div>
-  <script src="./main.js"></script>
-</body>
+      <section>
+        <div>
+          <h1 id="score"></h1>
+          <h2 id="health"></h2>
+          <img
+            id="enemy"
+            class="spot-image"
+            alt="Monster"
+            width="450px"
+            height="400px"
+          />
+        </div>
+      </section>
+
+      <section id="bottom-slot" class="wrapper">
+        <pre></pre>
+      </section>
+      <section id="result">
+        <table class="table-container">
+          <thead>
+            <tr>
+              <th>Nickname</th>
+              <th>Email</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody id="players"></tbody>
+        </table>
+      </section>
+    </main>
+    <script src="./main.js"></script>
+  </body>
 </html>
