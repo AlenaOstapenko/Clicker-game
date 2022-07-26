@@ -1,0 +1,41 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    /*background: linear-gradient(250deg, #91A0CB, #6C4D93);*/
+    background-image: url(img/background1.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1400px 800px;
+}
+
+.spot-image {
+    height: 300px;
+    width: 310px;
+    mix-blend-mode: multiply;
+    filter: contrast(2);
+}
+#enemy { 
+    cursor: pointer;
+    position: absolute; 
+    top: 300px; 
+    left: 500px; 
+    transition: all 1s;
+    user-select: none;
+}
+h1, h2, table {
+    font-family: 'Rock Salt', cursive;
+    font-style: italic;
+    color: antiquewhite;
+}
+table {
+    margin-right: 500px;
+    margin-left: 1000px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border-collapse: collapse;
+   
+}
+table, th, td {
+    border: 1px solid;
+  }
+

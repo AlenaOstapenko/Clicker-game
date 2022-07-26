@@ -1,45 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="">
-  <title>Clicker Game</title>
-</head>
-<body>
-  <main>
-    <header></header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style-index.css" />
+    <title>Clicker Game</title>
+  </head>
+  <body>
+    <main>
+      <header></header>
 
-<section>
-  <div>
-      <h1 id="score"></h1>
-      <h2 id="health"></h2>
-      <img id="enemy" style="left: 20px" alt = "Monster" width="250px" height="200px">
+      <section>
+        <div>
+          <h1 id="score"></h1>
+          <h2 id="health"></h2>
+          <img
+            id="enemy"
+            class="spot-image"
+            alt="Monster"
+            width="450px"
+            height="400px"
+          />
+        </div>
+      </section>
 
-  </div>
-</section>
-
-<section id="bottom-slot" class="wrapper">
-    <pre></pre>
-</section>
-<section id="result">
-  <table>
-    <thead>
-        <tr>
-            <th>Nickname</th>
-            <th>Email</th>
-            <th>Time</th>
-        </tr>
-    </thead>
-    <tbody id="players">
-       
-    </tbody>
-</table> 
-</section>
-
-  </main>
-  <script src="./main.js"></script>
-
-</body>
+      <section id="bottom-slot" class="wrapper">
+        <pre></pre>
+      </section>
+      <section id="result">
+        <table class="table-container">
+          <thead>
+            <tr>
+              <th>Nickname</th>
+              <th>Email</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody id="players"></tbody>
+        </table>
+      </section>
+    </main>
+    <script src="./main.js"></script>
+  </body>
 </html>
