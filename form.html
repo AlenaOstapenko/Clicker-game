@@ -13,49 +13,53 @@
 
       <section id="top-slot" class="wrapper">
         <div id="background">
-          <form id="form" action="./index.html" method="GET">
-            <h1 class="title">Registration form</h1>
+          <form id="form" name="login" action="./index.html" method="GET">
+              <h1 class="title">Registration form</h1>
             <fieldset>
               <legend>Personal Details</legend>
               <div class="form-line">
                 <label for="nickname"><span>*</span>NickName:</label>
                 <input
                   id="nickname"
+                  class="input-form"
                   name="nickname"
                   type="text"
                   placeholder="Iput nickname"
-                  required
                 />
+                <div class="error"></div>
               </div>
               <div class="form-line">
                 <label for="firstname"><span>*</span>Firs name:</label>
                 <input
                   id="firstname"
+                  class="input-form"
                   name="firstname"
                   type="text"
                   placeholder="Iput firstname"
-                  required
                 />
+                <div class="error"></div>
               </div>
               <div class="form-line">
                 <label for="lastname"><span>*</span>Last name:</label>
                 <input
                   id="lastname"
+                  class="input-form"
                   name="lastname"
                   type="text"
                   placeholder="Iput lastname"
-                  required
                 />
+                <div class="error"></div>
               </div>
               <div class="form-line">
                 <label for="email"><span>*</span>Email:</label>
                 <input
                   id="email"
+                  class="input-form input-email"
                   name="email"
                   type="email"
-                  placeholder="@gmail.com"
-                  required
+                  placeholder="exp@gmail.com"
                 />
+                <div class="error"></div>
               </div>
               <div class="form-actions">
                 <button type="reset">Reset</button>
@@ -69,5 +73,6 @@
         <pre></pre>
       </section>
     </main>
+    <script src="./form.js"></script>
   </body>
 </html>

@@ -1,3 +1,3 @@
 # Clicker-game
 
-This is first my commit
+This is Clicker game. 

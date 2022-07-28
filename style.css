@@ -1,14 +1,19 @@
 #background {
     margin-top: 20px;
 }
+*{
+    font-family: 'Rock Salt', cursive;
+}
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     /*background: linear-gradient(250deg, #91A0CB, #6C4D93);*/
-    background-image: url(img/Form_pic.jpg);
+    background-image: url(img/cartoon-monster-party-background-image.jpg);
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center center;
     background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
 }
 h1 {
@@ -16,7 +21,7 @@ h1 {
   margin: 0;
   text-transform: uppercase;
   padding-bottom: 5px; 
-  color: #fff; 
+  color: #B73B71; 
   text-shadow: 1px 1px 2px black;
 }
 form {
@@ -28,50 +33,49 @@ form {
     background: rgba(230, 239, 240, 0.1);
 }
 .form-line {
-    margin: 10px;
+    margin: 5px;
     padding: 5px;
-   
 }
 legend {
-    color: #fff;
+    color: #301768;
     text-shadow: 1px 1px 2px black;
-    shadow: 2px 2px 5px rgba(0,0,0,0.82);
-
 }
 label {
   padding-left: 10px;
   text-transform: uppercase;  
-  color: #fff;
+  color: #301768;
   text-shadow: 1px 1px 2px black;
 }
 input {
-    margin-top: 10px;
-    height: 40px;
+    margin-top: 7px;
+    height: 30px;
     width: 400px;
     border-radius: 10px/10px;
     border: none;
     padding-left: 15px;
     font-size: 18px;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.82);
-}
+   }
+
 input:focus {
-    border: 2px solid #6c00ff;
-    transform: translateX(5px);
-    width: 395px;
+    outline: 0;
+    /*transform: translateX(5px);
+    width: 395px;*/
 }
 button {
     cursor: pointer;
-    padding: 10px 30px;
-    margin-left: 15px;
-    height: 40px;
+    padding: 10px 40px;
+    margin-left: 12px;
+    height: 30px;
     width: 200px;
     color: #fff;
-    background: #6C4D93;
+    background: #93396C;
     border: none;
     border-radius: 10px;
     text-transform: uppercase;
     font-size: 15px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.82);   
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.82); 
+    text-shadow: 1px 1px 2px black;  
 }
 button:hover {
     opacity: .80;
@@ -81,8 +85,20 @@ button:hover {
 span {
     color: #8C1C40;
 }
-/*#bottom-slot {
-    width: 1000px;
-    height: 500px;
-    background: #fff;
-}*/
+
+.form-line.success input {
+    border-color: #09c372;
+}
+
+.form-line.error input {
+    border-color: #ff3860;
+}
+
+.form-line .error {
+    color: #ff3860;
+    font-size: 12px;
+    height: 13px;
+}
+
+
+
